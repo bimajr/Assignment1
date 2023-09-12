@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #555555; /* Warna latar belakang tampilan */
+}
+
+.calculator {
+  border: 2px solid #3498db; /* Warna border kalkulator */
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #292828; /* Warna latar belakang kalkulator */
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  background-color: #3498db;
+  color: #151515;
+  border: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: #fafafa; /* Warna latar belakang button */
+  color: #151515; /* Warna teks button */
+  border: none; /* Hapus border */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8b8b8b; /* Warna latar belakang button yang lebih terang saat hover */
+}
+
+.operator {
+  background-color: #3498db; /* Warna biru untuk latar belakang tombol operator */
+  color: #ffffff; /* Warna teks putih */
+}
+
+.operator:hover {
+  background-color: #2980b9; /* Warna biru yang lebih terang saat hover */
+}
