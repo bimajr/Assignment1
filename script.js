@@ -1,34 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const display = document.getElementById("display");
-  const buttons = document.querySelectorAll(".buttons button");
-  let expression = "";
+// Mendapatkan elemen input display
+var display = document.getElementById("display");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const value = this.textContent;
+// Fungsi untuk menambahkan teks ke display
+function appendToDisplay(value) {
+  display.value += value;
+}
 
-      if (value === "=") {
-        try {
-          const result = eval(expression);
-          display.value = result;
-          expression = result.toString();
-        } catch (error) {
-          display.value = "Error";
-          expression = "";
-        }
-      } else if (value === "C") {
-        display.value = "";
-        expression = "";
-      } else {
-        if (expression !== "" || !["+", "-", "*", "/"].includes(value)) {
-          if (expression.includes("=") || expression.includes("Error")) {
-            expression = value;
-          } else {
-            expression += value;
-          }
-          display.value = expression;
-        }
-      }
-    });
-  });
-});
+// Fungsi untuk membersihkan display
+function clearDisplay() {
+  display.value = "";
+}
+
+// Fungsi untuk menghitung hasil ekspresi matematika
+function calculateResult() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "Error";
+  }
+}
